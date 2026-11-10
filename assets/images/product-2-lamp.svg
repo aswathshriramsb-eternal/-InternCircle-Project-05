@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <rect width="400" height="300" rx="20" fill="#f3f0e6"/>
+  <ellipse cx="200" cy="252" rx="112" ry="12" fill="#ddd9cc"/>
+  <!-- Ambient Light Cone -->
+  <polygon points="164,126 226,126 268,248 110,248" fill="#c4eb57" fill-opacity="0.24"/>
+  <!-- Lamp Stem & Base -->
+  <rect x="196" y="238" width="96" height="16" rx="8" fill="#1c221d"/>
+  <path d="M244 238V116c0-36-26-54-54-54-20 0-38 12-45 32" stroke="#1c221d" stroke-width="11" stroke-linecap="round"/>
+  <!-- Lamp Shade -->
+  <path d="M124 126l22-36h56l20 36H124Z" fill="#2f5d42"/>
+  <ellipse cx="173" cy="126" rx="49" ry="7" fill="#c4eb57"/>
+</svg>

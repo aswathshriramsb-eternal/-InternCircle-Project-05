@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <rect width="400" height="300" rx="20" fill="#eaefe7"/>
+  <ellipse cx="200" cy="246" rx="102" ry="12" fill="#d0d9cc"/>
+  <!-- Charging Case Open Lid -->
+  <path d="M136 128c0-38 28-64 64-64s64 26 64 64v12H136v-12Z" fill="#2f5d42"/>
+  <!-- Charging Case Lower Body -->
+  <rect x="136" y="138" width="128" height="104" rx="34" fill="#1c221d"/>
+  <!-- Earbuds Seated Inside -->
+  <rect x="158" y="110" width="32" height="58" rx="16" fill="#faf7f0"/>
+  <circle cx="174" cy="126" r="9" fill="#c4eb57"/>
+  <rect x="210" y="110" width="32" height="58" rx="16" fill="#faf7f0"/>
+  <circle cx="226" cy="126" r="9" fill="#c4eb57"/>
+  <!-- LED Status Dot -->
+  <circle cx="200" cy="186" r="5" fill="#c4eb57"/>
+</svg>

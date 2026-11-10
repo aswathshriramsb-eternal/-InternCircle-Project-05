@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <rect width="400" height="300" rx="20" fill="#edf2eb"/>
+  <ellipse cx="195" cy="242" rx="95" ry="12" fill="#d3ddd0"/>
+  <!-- Handle -->
+  <path d="M254 134h20c22 0 34 14 34 34s-12 34-34 34h-20" stroke="#2f5d42" stroke-width="12" stroke-linecap="round"/>
+  <!-- Ceramic Body -->
+  <path d="M132 108h128v88c0 24-18 42-42 42h-44c-24 0-42-18-42-42v-88Z" fill="#faf7f0" stroke="#2f5d42" stroke-width="4"/>
+  <ellipse cx="196" cy="108" rx="64" ry="12" fill="#d9e4d3" stroke="#2f5d42" stroke-width="3"/>
+  <!-- Ceramic Speckles -->
+  <circle cx="164" cy="156" r="3" fill="#6f8b75"/>
+  <circle cx="218" cy="176" r="2.5" fill="#6f8b75"/>
+  <circle cx="188" cy="202" r="3" fill="#2f5d42"/>
+  <!-- Steam -->
+  <path d="M174 80c0-10 10-12 10-24M202 84c0-10 10-12 10-24M228 80c0-9 8-11 8-20" stroke="#6f8b75" stroke-width="3.5" stroke-linecap="round"/>
+</svg>

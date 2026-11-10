@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="Verdant & Co. — Minimalist lifestyle and workspace goods storefront with interactive shopping bag, live INR totals, LocalStorage persistence, and demo order preview.">
+  <title>Verdant &amp; Co. — Minimalist Everyday Storefront</title>
+  <link rel="icon" href="./assets/images/brand-logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+  <script defer src="./js/script.js"></script>
+</head>
+<body>
+  <!-- Inline Lucide-compatible SVG symbol sprite -->
+  <svg xmlns="http://www.w3.org/2000/svg" class="svg-sprite" aria-hidden="true">
+    <symbol id="icon-bag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/>
+      <path d="M3 6h18"/>
+      <path d="M16 10a4 4 0 0 1-8 0"/>
+    </symbol>
+    <symbol id="icon-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 12h14"/>
+      <path d="M12 5v14"/>
+    </symbol>
+    <symbol id="icon-minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 12h14"/>
+    </symbol>
+    <symbol id="icon-trash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 6h18"/>
+      <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/>
+      <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/>
+      <line x1="10" x2="10" y1="11" y2="17"/>
+      <line x1="14" x2="14" y1="11" y2="17"/>
+    </symbol>
+    <symbol id="icon-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 6 6 18"/>
+      <path d="m6 6 12 12"/>
+    </symbol>
+    <symbol id="icon-truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/>
+      <path d="M15 18H9"/>
+      <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/>
+      <circle cx="17" cy="18" r="2"/>
+      <circle cx="7" cy="18" r="2"/>
+    </symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12"/>
+    </symbol>
+    <symbol id="icon-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 12h14"/>
+      <path d="m12 5 7 7-7 7"/>
+    </symbol>
+    <symbol id="icon-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/>
+      <path d="M12 16v-4"/>
+      <path d="M12 8h.01"/>
+    </symbol>
+  </svg>
+
+  <a href="#main-content" class="skip-link visually-hidden">Skip to main content</a>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a href="#top" class="brand">
+        <img src="./assets/images/brand-logo.svg" alt="" width="38" height="38" class="brand-logo">
+        <span class="brand-copy">
+          <span class="brand-name">Verdant &amp; Co.</span>
+          <span class="brand-tag">Everyday Objects</span>
+        </span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="#hero" class="nav-link is-active" aria-current="page">Home</a></li>
+          <li><a href="#shop" class="nav-link">Shop</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+        </ul>
+      </nav>
+
+      <button
+        type="button"
+        id="nav-cart-btn"
+        class="cart-nav-btn"
+        aria-label="Jump to shopping bag"
+      >
+        <svg class="ui-icon" aria-hidden="true" width="18" height="18">
+          <use href="#icon-bag"></use>
+        </svg>
+        <span>Bag</span>
+        <span id="nav-cart-count" class="cart-count-pill">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content" tabindex="-1">
+    <!-- Hero Banner -->
+    <section id="hero" class="hero-section" aria-labelledby="hero-heading">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="hero-badge">Small-Batch Everyday Essentials</span>
+          <h1 id="hero-heading" class="hero-title">Designed for calm workspaces and lighter journeys.</h1>
+          <p class="hero-description">
+            Thoughtfully crafted notebooks, warm desk lighting, ceramic drinkware, and portable carry pieces built for tactile daily ritual.
+          </p>
+          <div class="hero-actions">
+            <a href="#shop" class="btn btn-primary hero-cta">
+              <span>Explore Collection</span>
+              <svg class="ui-icon" aria-hidden="true" width="18" height="18">
+                <use href="#icon-arrow-right"></use>
+              </svg>
+            </a>
+            <a href="#about" class="btn btn-secondary">Our Philosophy</a>
+          </div>
+          <div class="hero-perk">
+            <svg class="ui-icon ui-icon-sage" aria-hidden="true" width="18" height="18">
+              <use href="#icon-truck"></use>
+            </svg>
+            <span>Complimentary delivery on orders of ₹500 or above (₹40 standard below ₹500).</span>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <img
+            src="./assets/images/hero-collection.svg"
+            alt="Minimalist lifestyle workspace arrangement featuring an arc lamp, linen notebook, ceramic mug, and travel flask"
+            width="480"
+            height="360"
+            fetchpriority="high"
+            class="hero-image"
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Storefront Catalogue & Persistent Shopping Bag -->
+    <section id="shop" class="shop-section" aria-labelledby="shop-heading">
+      <div class="container">
+        <div class="shop-header">
+          <div>
+            <h2 id="shop-heading" class="section-title">Curated Catalogue</h2>
+            <p class="section-subtitle" id="catalog-count-label">Showing 8 essentials across Desk, Lifestyle, Tech, and Travel.</p>
+          </div>
+
+          <div class="filter-bar" role="group" aria-label="Filter products by category">
+            <button type="button" class="filter-btn" data-category="All Items" aria-pressed="true">All Items</button>
+            <button type="button" class="filter-btn" data-category="Desk" aria-pressed="false">Desk</button>
+            <button type="button" class="filter-btn" data-category="Lifestyle" aria-pressed="false">Lifestyle</button>
+            <button type="button" class="filter-btn" data-category="Tech" aria-pressed="false">Tech</button>
+            <button type="button" class="filter-btn" data-category="Travel" aria-pressed="false">Travel</button>
+          </div>
+        </div>
+
+        <div class="store-layout">
+          <!-- Product Catalogue populated dynamically from js/script.js -->
+          <div class="catalog-column">
+            <div id="product-grid" class="product-grid"></div>
+          </div>
+
+          <!-- Shopping Cart Summary Panel populated dynamically from js/script.js -->
+          <aside id="cart-section" class="cart-panel" aria-labelledby="cart-heading">
+            <div class="cart-panel-header">
+              <div class="cart-title-row">
+                <svg class="ui-icon ui-icon-sage" aria-hidden="true" width="20" height="20">
+                  <use href="#icon-bag"></use>
+                </svg>
+                <h2 id="cart-heading" class="cart-title" tabindex="-1">Shopping Bag</h2>
+              </div>
+              <span id="cart-badge-count" class="cart-items-badge">0 items</span>
+            </div>
+
+            <div id="delivery-status-note" class="delivery-banner">
+              Free delivery unlocks at ₹500.00
+            </div>
+
+            <div id="cart-items" class="cart-items"></div>
+
+            <div class="cart-summary">
+              <div class="summary-row">
+                <span>Subtotal</span>
+                <span id="cart-subtotal" class="summary-value">₹0.00</span>
+              </div>
+              <div class="summary-row">
+                <span>Delivery charge</span>
+                <span id="cart-delivery" class="summary-value">₹0.00</span>
+              </div>
+              <div class="summary-row summary-total-row">
+                <span>Grand Total</span>
+                <span id="cart-grand-total" class="summary-total-value">₹0.00</span>
+              </div>
+
+              <button
+                type="button"
+                id="review-order-btn"
+                class="btn btn-primary review-btn"
+                disabled
+              >
+                <span>Review Order</span>
+                <svg class="ui-icon" aria-hidden="true" width="18" height="18">
+                  <use href="#icon-arrow-right"></use>
+                </svg>
+              </button>
+              <p class="cart-demo-note">Cart saves automatically in your browser.</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Brand Philosophy / About Section -->
+    <section id="about" class="about-section" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="about-intro">
+          <span class="about-eyebrow">About Verdant &amp; Co.</span>
+          <h2 id="about-heading" class="section-title">Objects made to stay on your desk for years</h2>
+          <p class="about-lead">
+            Rather than seasonal clutter, our studio curates eight utilitarian pieces balancing muted sage finishes, honest stoneware, and dependable daily ergonomics.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <article class="about-card">
+            <h3 class="about-card-title">Tactile Materials</h3>
+            <p class="about-card-text">
+              Acid-free linen paper, heavy organic canvas, speckled stoneware, and powder-coated stainless steel chosen for everyday longevity.
+            </p>
+          </article>
+          <article class="about-card">
+            <h3 class="about-card-title">Transparent Pricing</h3>
+            <p class="about-card-text">
+              Clear INR pricing with a flat ₹40 delivery fee on compact parcels under ₹500, and complimentary shipping once your bag reaches ₹500.
+            </p>
+          </article>
+          <article class="about-card">
+            <h3 class="about-card-title">Interactive Demo Storefront</h3>
+            <p class="about-card-text">
+              Built with Vanilla JavaScript, native modal dialogs, and LocalStorage persistence—zero real payment collection or card forms.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="footer-title">Verdant &amp; Co.</span>
+        <span class="footer-meta">InternCircle Full-Stack Web Development · Project 05</span>
+      </div>
+      <div class="footer-links">
+        <a href="#hero" class="footer-link">Home</a>
+        <a href="#shop" class="footer-link">Shop</a>
+        <a href="#about" class="footer-link">About</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Native Modal Dialog for Order Review (Checkout Preview Only) -->
+  <dialog
+    id="checkout-modal"
+    class="checkout-dialog"
+    closedby="any"
+    aria-labelledby="checkout-modal-title"
+  >
+    <div class="dialog-panel">
+      <div class="dialog-header">
+        <div>
+          <h2 id="checkout-modal-title" class="dialog-title">Order Preview</h2>
+          <p class="dialog-subtitle">Review your selected items before placing a demonstration order.</p>
+        </div>
+        <button
+          type="button"
+          id="modal-close-x"
+          class="dialog-close-btn"
+          aria-label="Close checkout preview"
+        >
+          <svg aria-hidden="true" width="20" height="20">
+            <use href="#icon-x"></use>
+          </svg>
+        </button>
+      </div>
+
+      <div class="dialog-disclaimer" role="note">
+        <svg class="ui-icon ui-icon-sage" aria-hidden="true" width="18" height="18">
+          <use href="#icon-info"></use>
+        </svg>
+        <span>Demo checkout — No payment is collected.</span>
+      </div>
+
+      <ul id="modal-items-list" class="modal-items-list" role="list"></ul>
+
+      <div class="modal-totals">
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span id="modal-subtotal" class="summary-value">₹0.00</span>
+        </div>
+        <div class="summary-row">
+          <span>Delivery charge</span>
+          <span id="modal-delivery" class="summary-value">₹0.00</span>
+        </div>
+        <div class="summary-row summary-total-row">
+          <span>Grand Total</span>
+          <span id="modal-grand-total" class="summary-total-value">₹0.00</span>
+        </div>
+      </div>
+
+      <form method="dialog" class="dialog-actions">
+        <button type="submit" id="modal-close-btn" value="close" class="btn btn-secondary">Close</button>
+        <button type="submit" id="modal-confirm-btn" value="confirm" class="btn btn-primary" autofocus>
+          <svg class="ui-icon" aria-hidden="true" width="18" height="18">
+            <use href="#icon-check"></use>
+          </svg>
+          <span>Got it</span>
+        </button>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- Toast notification region (top-layer popover with non-modal status announcement) -->
+  <div id="toast-region" class="toast-region" role="region" aria-label="Notifications"></div>
+
+  <!-- Single centralized polite live region for screen reader announcements -->
+  <p class="visually-hidden">Cart and storefront updates</p>
+  <div id="a11y-announcer" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>

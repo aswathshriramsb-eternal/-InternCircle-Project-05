@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <rect width="400" height="300" rx="20" fill="#eef3ea"/>
+  <ellipse cx="204" cy="248" rx="108" ry="12" fill="#d5dfd0"/>
+  <!-- Notebook Spine & Cover -->
+  <rect x="116" y="48" width="168" height="196" rx="12" fill="#2f5d42"/>
+  <rect x="116" y="48" width="24" height="196" rx="8" fill="#20422e"/>
+  <!-- Cream Paper Edge -->
+  <rect x="276" y="56" width="12" height="180" rx="4" fill="#faf7f0"/>
+  <!-- Minimal Label Plate & Elastic Band -->
+  <rect x="164" y="88" width="84" height="36" rx="6" fill="#faf7f0"/>
+  <line x1="176" y1="102" x2="236" y2="102" stroke="#2f5d42" stroke-width="3" stroke-linecap="round"/>
+  <line x1="176" y1="112" x2="218" y2="112" stroke="#6f8b75" stroke-width="2.5" stroke-linecap="round"/>
+  <rect x="248" y="48" width="10" height="196" fill="#c4eb57"/>
+  <!-- Brass Pen -->
+  <rect x="306" y="90" width="10" height="132" rx="5" fill="#1c221d"/>
+  <polygon points="306,222 316,222 311,238" fill="#c4eb57"/>
+</svg>

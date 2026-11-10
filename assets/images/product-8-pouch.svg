@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <rect width="400" height="300" rx="20" fill="#f2efe5"/>
+  <ellipse cx="200" cy="244" rx="126" ry="12" fill="#dcd7ca"/>
+  <!-- Pouch Body -->
+  <rect x="86" y="88" width="228" height="148" rx="26" fill="#253329"/>
+  <!-- Zipper Seam & Lime Pull -->
+  <line x1="94" y1="126" x2="306" y2="126" stroke="#6f8b75" stroke-width="5" stroke-dasharray="8 6"/>
+  <rect x="278" y="114" width="38" height="16" rx="8" fill="#c4eb57"/>
+  <!-- Minimal Leather Patch -->
+  <rect x="114" y="168" width="76" height="38" rx="8" fill="#2f5d42" stroke="#c4eb57" stroke-width="2"/>
+  <line x1="128" y1="184" x2="176" y2="184" stroke="#faf7f0" stroke-width="3" stroke-linecap="round"/>
+  <line x1="128" y1="194" x2="158" y2="194" stroke="#c4eb57" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <rect width="400" height="300" rx="20" fill="#ebf0e8"/>
+  <ellipse cx="200" cy="248" rx="94" ry="12" fill="#cfd8cb"/>
+  <!-- USB Cable Accent -->
+  <path d="M236 92c46 0 64 26 64 56s-24 54-46 54" stroke="#6f8b75" stroke-width="6" stroke-linecap="round"/>
+  <!-- Anodized Power Bank Body -->
+  <rect x="132" y="64" width="112" height="176" rx="22" fill="#1c221d"/>
+  <rect x="142" y="74" width="92" height="156" rx="16" fill="#27322a"/>
+  <!-- Lime LED Charge Dots -->
+  <circle cx="188" cy="110" r="6" fill="#c4eb57"/>
+  <circle cx="188" cy="130" r="6" fill="#c4eb57"/>
+  <circle cx="188" cy="150" r="6" fill="#c4eb57"/>
+  <circle cx="188" cy="170" r="6" fill="#6f8b75"/>
+  <!-- Port Trim -->
+  <rect x="172" y="202" width="32" height="8" rx="4" fill="#c4eb57"/>
+</svg>
